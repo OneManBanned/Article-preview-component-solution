@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --bg-blue: hsl(210, 46%, 95%);
+    --p-clr: hsl(212, 23%, 69%);
+    --h1-clr: hsl(214, 17%, 51%);
+    --active-bg: hsl(217, 19%, 35%);
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    color: var(--active-bg);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+p {
+    color: var(--h1-clr);
+    font-size: 0.8325rem;
+    font-weight: 500;
+    line-height: 1.6em;
+}
+
+h2 {
+    color: var(--active-clr);
+    font-size: 0.8125rem;
+    font-weight: 700;
+}
+
+div>p {
+    font-size: 0.8125rem;
+    color: var(--h1-clr);
+}
+
+/* LAYOUT */
+
+body {
+    background-color: var(--bg-blue);
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 1.5em 3em 1.5em;
+}
+
+main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.img {
+    background-image: url(./images/drawers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 14em;
+    overflow: hidden;
+    border-radius: 0.75rem 0.75rem 0 0;
+
+
+}
+
+.profile-card {
+    column-gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr 55% 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+h1 {
+    margin: 2.5rem 2rem 1rem 2rem;
+}
+
+main>p {
+    margin: 0 2rem 1rem 2rem;
+}
+
+.profile-picture {
+    width: 95%;
+    border-radius: 50%;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    justify-self: start;
+    align-self: center;
+}
+
+div>p {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.share-img {
+    grid-row: 1/3;
+    grid-column: 3/4;
+    justify-self: end;
+    align-self: center;
+    border-radius: 50%;
+    padding: 0.8em;
+    background-color: var(--bg-blue);
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.path {
+    fill: var(--active-bg);
+}
+
+h2 {
+    align-self: center;
+}
+
+.profile-card>p {
+    align-self: center;
+}
+
+.status-card {
+    width: 100%;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: var(--active-bg);
+    background-image: url(./images/icon-facebook.svg), url(./images/icon-twitter.svg),
+        url(./images/icon-pinterest.svg);
+    background-repeat: no-repeat;
+    background-position: 40% center, 50% center, 60% center;
+    border-radius: 0 0 0.75em 0.75em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.share {
+    color: var(--p-clr);
+    font-size: 0.85rem;
+    letter-spacing: 0.20rem;
+}
+
+@media all and (min-width: 376px) {
+
+    /* TYPOGRAPHY */
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    /* LAYOUT */
+
+    main {
+        display: grid;
+        grid-template-columns: 38% 62%;
+        width: 47rem;
+        padding-right: 1.25rem;
+        margin: 1rem;
+    }
+
+    .img {
+        grid-column: 1/2;
+        grid-row: 1/4;
+        background-image: url(./images/drawers.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 0.75em 0 0 0.75em;
+    }
+
+    p,
+    h2,
+    .profile-card {
+        grid-column: 2/3;
+
+    }
+
+    h1 {
+        margin-top: 1.25rem;
+        margin-right: 3rem;
+    }
+
+    .profile-card {
+        column-gap: 1em;
+        grid-template-columns: 10% 80% 10%;
+        width: 95%;
+        padding-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .profile-picture {
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .status {
+        position: absolute;
+        right: 19.75%;
+        top: 52.25%;
+        width: 12.75rem;
+        height: 2.75rem;
+        background-color: var(--active-bg);
+        background-image: url(./images/icon-facebook.svg), url(./images/icon-twitter.svg),
+            url(./images/icon-pinterest.svg);
+        background-repeat: no-repeat;
+        background-position: 55% center, 70% center, 85% center;
+        background-size: 8%;
+        border-radius: 0.5em 0.5em 0.5em 0.5em;
+        display: flex;
+    }
+
+    .share {
+        color: var(--p-clr);
+        font-size: 0.70rem;
+        letter-spacing: 0.20rem;
+        align-self: center;
+        padding-left: 2.5em;
+    }
+
+    .tri {
+        height: 1em;
+        width: 1em;
+        background-color: var(--active-bg);
+        position: absolute;
+        transform: rotate(45deg);
+        left: 72.25%;
+        top: 57.75%;
+    }
+}
